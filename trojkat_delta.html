@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <META CHARSET="UTF-8">
+        <title>trójkąt</title>
+    </head>
+    <body>
+		<font size="6">
+       <script>
+
+        function trojkat(a,b,c){
+            if(a+b>c)
+            {
+                document.write("trójkąt istnieje<br>");
+                o=a+b+c;
+                p=o/2;
+                x=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+                document.write("pole wynosi: ", x);
+            } 
+            else 
+            {
+                document.write("trojkąt nie istnieje")
+            }
+        }
+         let a = prompt("Podaj  bok: ");
+		 let b = prompt("Podaj  bok: ");
+		 let c = prompt("Podaj  bok: ");
+         let x;
+         let o;
+         let p;
+
+    a=parseFloat(a);
+	b=parseFloat(b);
+	c=parseFloat(c);
+    trojkat(a,b,c);
+
+    </script>
+    </body>
+</html>

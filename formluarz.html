@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Formularz zgloszenia pojazdu</title>
+    <style>
+        body{
+            background-color: rgb(57, 129, 64);
+        }
+        #form{
+            background-color: rgb(41, 116, 47);
+            width: 590px;
+            display: grid;
+            place-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1{
+            text-align: center;
+        }
+        .grid-container {
+                display: grid;
+                grid-template-columns: repeat(1, 250px);
+                grid-gap: 15px;
+
+                }
+
+                label {
+                grid-column: 1;
+                
+                }
+
+                input {
+                grid-column: 3;
+                background-color: rgb(255, 255, 255);
+                border: 1;
+                width: 100%;
+                height: 100%;
+            }
+
+                select {
+                grid-column: 3;
+                background-color: rgb(255, 255, 255);
+                border: 4;
+                width: 105%;
+                height: 130%;
+            }
+
+    </style>
+</head>
+<body>
+    
+	<h1>Formularz Zgloszenia Pojazdu</h1>
+    
+    <div id="form">
+        <form id="carForm" onsubmit="return validateForm()">
+          <div class="grid-container">
+            <label for="marka">Marka:</label>
+            <input type="text" id="marka" name="marka" required>
+      
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" required>
+      
+            <label for="rokProd">Rok Produkcji:</label>
+            <input type="text" id="rokProd" name="rokProd" pattern="\d{4}" required>
+      
+            <label for="przebieg">Przebieg:</label>
+            <input type="number" id="przebieg" name="przebieg" required>
+      
+            <label for="kolor">Kolor:</label>
+            <select name="kolor">
+                <option selected>- - -</option>
+                <option value="Czarny">Czarny</option>
+                <option value="Srebrny">Srebrny</option>
+                <option value="Niebieski">Niebieski</option>
+                <optionv alue="Czerwony">Czerwony</option>
+                <option value="Biały">Biały</option>
+                <option value="Złoty">Złoty</option>
+                <option value="Zielony">Zielony</option>
+                <option value="Inny">Inny</option>
+                
+            </select>
+      
+            <label for="krajPochodz">Kraj Pochodzenia:</label>
+            <input type="text" id="krajPochodz" name="krajPochodz" required>
+      
+            <label for="kodPocztowy">Kod pocztowy:</label>
+            <input type="text" id="kodPocztowy" name="kodPocztowy" pattern="\d{2}-\d{3}" required>
+      
+            <label for="email">E-mail do Sprzedawcy:</label>
+            <input type="email" id="email" name="email" required>
+      
+            <label for="wypadkowy">Po wypadku?</label>
+            <input type="checkbox" id="wypadkowy" name="wypadkowy">
+            
+            <label for="wypadkowy">Ubezpieczony?</label>
+            <input type="checkbox" name="ubezp" value="ubezp">
+           
+            <input type="submit" value="Wyslij">
+            <input type="reset" value="Resetuj">
+            
+          </div>
+        </form>
+      </div>
+	<script>
+		function validateForm() {
+			var form = document.getElementById("carForm");
+			var marka = form.elements["marka"].value;
+			var model = form.elements["model"].value;
+			var rokProd = form.elements["rokProd"].value;
+			var przebieg = form.elements["przebieg"].value;
+			var kolor = form.elements["kolor"].select;
+			var krajPochodz = form.elements["krajPochodz"].value;
+			var kodPocztowy = form.elements["kodPocztowy"].value;
+			var email = form.elements["email"].value;
+
+			if (marka === "" 
+            || model === "" 
+            || rokProdukcji === "" 
+            || przebieg === "" 
+            || kolor === "" 
+            || krajPochodzenia === "" 
+            || kodPocztowy === "" 
+            || email === "") {
+
+				alert("Wszystkie pola musza byc wypelnione!");
+				return false;
+			}
+                wyslany();
+            return true;
+            }
+            function wyslany(){
+                alert("Formularz Wyslany");
+            }
+        </script>
+    </body>
+</html>
