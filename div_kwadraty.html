@@ -1,0 +1,62 @@
+<html>
+    <head>
+     <meta charset="UTF-8">
+     <title>div_kwadraty</title>
+     <link rel="stylesheet" href="kwadraty_styl.css">
+    <script>
+        let a;
+        let b;
+        let c;
+        function f1(){
+       
+       document.getElementById("b").innerHTML=(Math.floor(Math.random()*100+1));
+        }
+        function f2(){
+        a = prompt("podaj a: ");
+        b = prompt("podaj b: ");
+        c = prompt("podaj c: ");
+        a = parseFloat(a);
+        b = parseFloat(b);
+        c = parseFloat(c);
+        delta(a,b,c);
+        }
+        function f3(){
+        window.close();
+        }
+       function delta (a,b,c){
+        let delta = 0;
+        let x = 0;
+        let y = 0;
+        if (a == 0) {
+        x = -(c) / b;
+        document.getElementById("b").innerHTML=("x = ", x);
+        } else {
+        delta = Math.pow(b, 2) - (4 * a * c);
+        if (delta > 0) {
+        x = (-(b) - Math.sqrt(delta)) / (2 * a);
+        y = (-(b) + Math.sqrt(delta)) / (2 * a);
+        document.getElementById("b").innerHTML=("<br>x<sub>1</sub> = ", x);
+       
+       document.getElementById("b").innerHTML=(document.getElementById("b").innerHTML
+       =("<br>x<sub>2</sub> = ", y));
+        } else if (delta == 0) {
+        x = -(b) / (2 * a);
+        document.getElementById("b").innerHTML=("<br>x<sub>0</sub> = ", x);
+        } else {
+        document.getElementById("b").innerHTML=("error");
+        }
+        }
+       }
+    </script>
+    </head>
+        <body style="background-color:rgb(42, 74, 104);">
+        <div class="center">
+        <div onclick="f1()" id="kwadrat_1"><img src="liczba.png"></div>
+        <div onclick="f2()" id="kwadrat_2"><img src="funkcja.png"></div>
+       <div onclick="f3()" id="kwadrat_3"><img src="zamknij.png"></div>
+        </div>
+        <div class="center">
+        <div id="b"></div>
+        </div>
+       </body>
+</html>
